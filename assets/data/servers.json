@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Tierras de Argentum",
+        "content": "Tierras de Argentum (TDA) es un videojuego desarrollado en Visual Basic 6 que se basa en los códigos y recursos liberados de Argentum Online (AO) 0.11.5. Fundado en 2013, TDA busca solucionar las principales problemáticas del AO, renovando las mecánicas esenciales del juego y su dinámica, las cuales han permanecido sin cambios durante más de 20 años. La idea de crear Tierras de Argentum surge de la necesidad de ofrecer una experiencia de juego mejorada a los fanáticos de Argentum Online, un juego que ha sido muy popular en la comunidad de habla hispana desde su lanzamiento en 1999. A lo largo de los años, la comunidad ha demostrado su compromiso con el juego y ha desarrollado mods, parches y actualizaciones no oficiales para mejorar la jugabilidad y corregir errores del juego original. Sin embargo, estos esfuerzos a menudo se han enfrentado a desafíos como la falta de recursos, la falta de estabilidad o la falta de coordinación entre los equipos de desarrollo. TDA busca resolver estos desafíos, brindando una plataforma estable y duradera para que los fanáticos puedan disfrutar de una experiencia de juego más actualizada y satisfactoria.En Tierras de Argentum, podrás disfrutar de una experiencia inmersiva en el mundo de Argentum, donde el rol y la diversión nunca faltarán. Explora vastos territorios, enfréntate a peligrosos enemigos y haz amigos en un mundo persistente y vivo. Vive aventuras emocionantes, aprende nuevas habilidades y mejora tu personaje para enfrentarte a desafíos cada vez mayores. Con TDA, descubre un nuevo capítulo en la historia de Argentum Online y conviértete en un héroe legendario en las Tierras de Argentum.",
+        "image_url": "/images/server/f59ef712880a4fc7807dc314920be041.png",
+        "website": "https://tierrasdeargentum.com/",
+        "discord": "https://discord.com/invite/NytwffUDH6",
+        "platforms": [
+            "windows"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "ImperiumAO",
+        "content": "ImperiumAO es un juego de rol en línea totalmente gratuito en el cual interactúas con miles de jugadores de todo el mundo. Puedes elegir entre diferentes clases de personajes, como guerreros, magos, clérigos o ladrones, y personalizar sus atributos y habilidades. También puedes explorar un vasto mundo lleno de aventuras, misiones, monstruos y tesoros. Además, puedes participar en batallas épicas por el control de las ciudades o alianzas entre las cuatro facciones del juego: el Imperio, la República, las Fuerzas del Caos o los Neutrales. ",
+        "image_url": "/images/server/d950e7a165474176b76e98a06be1f8cd.png",
+        "website": "https://www.imperiumao.com.ar/",
+        "discord": "https://discord.com/invite/imperiumao",
+        "platforms": [
+            "windows"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "FuriusAO",
+        "content": "FúriusAO es un juego de rol multijugador en línea ambientado en un mundo de fantasía donde puedes interactuar con otros jugadores y personajes no jugadores1. Puedes elegir tu raza y tu clase al principio del juego y aprender habilidades que te ayudarán en tu aventura",
+        "image_url": "/images/server/d34f1e7d8a094e438662c7b083251500.png",
+        "website": "https://www.furiusao.com.ar/",
+        "discord": "https://discord.gg/furiusao",
+        "platforms": [
+            "windows",
+            "android"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Aesir Online",
+        "content": "Aesir Online es un juego de rol multijugador masivo inspirado en Argentum Online, donde puedes explorar un mundo de fantasía y luchar con o contra otros jugadores",
+        "image_url": "/images/server/29c7275b7b5e44e48e3ec6f999164613.png",
+        "website": "https://www.aesir-online.net/",
+        "discord": "https://discord.com/invite/TsqEjMH",
+        "platforms": [
+            "windows",
+            "linux",
+            "mac",
+            "android"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Tierras Perdidas",
+        "content": "Tierras Perdidas 2 es un proyecto en desarrollo que busca crear una nueva versión del juego de rol multijugador Tierras Perdidas, con gráficos mejorados y nuevas características",
+        "image_url": "/images/server/dfe5a4dae9a14ee98c35b4bdc82b71ff.jpg",
+        "website": "https://www.tpjuegos.com",
+        "discord": "https://discord.gg/Ge32KSY",
+        "platforms": [
+            "windows", 
+            "android"
+        ]
+    }
+]

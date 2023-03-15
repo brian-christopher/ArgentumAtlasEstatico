@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del servidor</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/index.html">Lista de servidores</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/index.html">Inicio</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th colspan="2">Informacion del servidor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nombre</td>
+                        <td id="server-name"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Pagina Web</td>
+                        <td>
+                            <a class="link-dark" id="server-web" target="_blank"><em>Website</em></a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Discord</td>
+                        <td>
+                            <a class="link-dark" id="server-discord" target="_blank"><em>Discord</em></a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Plataformas disponibles</td>
+                        <td id="server-platform-container">
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <div class="card bg-light mt-3 mb-3">
+                <div class="card-body">
+                    <h3 class="card-title">Acerca del servidor</h3>
+
+                    <div class="card-text">
+                        <strong id="content-name"></strong>
+                        <br />
+                        <br />
+                        <p id="content"></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+ 
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/utils.js"></script>
+
+    <script>
+        window.addEventListener('load', async () => { 
+            const uRLSearchParams = new URLSearchParams(window.location.search);
+            const id = parseInt(uRLSearchParams.get("id"));
+
+            const server = await getServerByIdAsync(id);
+
+            document.getElementById("server-name").innerText = server.name;
+            document.getElementById("server-web").setAttribute("href", server.website);
+            document.getElementById("server-discord").setAttribute("href", server.discord);
+            document.getElementById("server-name").innerText = server.name;
+
+            //server-platform-container
+            server.platforms.forEach(platformName => {
+                const img = document.createElement("img");
+                img.classList.add("img-thumbnail");
+                img.setAttribute("src", `/assets/images/os/${platformName}.png`);
+                img.setAttribute("alt", platformName);
+                img.setAttribute("data-bs-toggle", "tooltip");
+                img.setAttribute("data-bs-title", platformName);
+
+                document.getElementById("server-platform-container").appendChild(img);
+            });
+
+            document.getElementById("content-name").innerText = server.name;
+            document.getElementById("content").innerText = server.content;
+
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        });
+
+    </script>
+
+    <footer class="border-top footer text-muted">
+        <div class="container text-center">
+            &copy; 2023 - ArgentumAtlas
+        </div>
+    </footer>
+</body>
+
+</html>

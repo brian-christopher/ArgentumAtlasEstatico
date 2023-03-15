@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de servidores</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/index.html">Lista de servidores</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/index.html">Inicio</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="server-container">
+
+            </div>
+        </main>
+    </div>
+ 
+
+    <template id="template-card-server">
+        <div class="card text-white rounsded bg-dark" style="width: 18rem;">
+            <img class="card-img" />
+            <div class="card-img-overlay d-flex align-items-end">
+                <div class="d-flex justify-content-around w-100" id="platform-container">
+
+                </div>
+            </div>
+            <a class="stretched-link">
+            </a>
+        </div>
+    </template>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/utils.js"></script>
+
+ 
+    <script>
+        window.addEventListener("load", async () => {
+            const servers = await getServerListAsync();
+            const template = document.getElementById("template-card-server").content;
+            const fragment = document.createDocumentFragment();
+
+            servers.forEach(server => {
+                let clone = document.importNode(template, true);
+
+                clone.querySelector("img").setAttribute("src", `/assets/${server.image_url}`);
+                clone.querySelector("img").setAttribute("alt", server.name);
+
+                clone.querySelector("a").setAttribute("href", `/serverdetails.html?id=${server.id}`);
+                const platformContainer = clone.getElementById("platform-container")
+
+                server.platforms.forEach(platform => {
+                    const platformImg = document.createElement("img");
+                    platformImg.classList.add("img-thumbnail");
+                    platformImg.setAttribute("src", `/assets/images/os/${platform}.png`);
+                    platformImg.setAttribute("alt", platform);
+
+                    platformContainer.appendChild(platformImg);
+                });
+ 
+                const container = document.createElement("div");
+                container.appendChild(clone);
+                container.classList.add("col");
+
+                fragment.appendChild(container);
+            });
+
+            document.getElementById("server-container").appendChild(fragment);
+        }); 
+    </script>
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container text-center">
+            &copy; 2023 - ArgentumAtlas
+        </div>
+    </footer>
+</body>
+
+</html>
